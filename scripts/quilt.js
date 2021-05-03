@@ -29,6 +29,8 @@ function generateQuilt() {
 		ctx.fillStyle = convertDateToColor(date.value, colorMode);
 		ctx.fillRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
 	});
-
-	window.open(ctx.canvas.toDataURL(), '_blank');
+	
+	var canvasWindow = window.open(ctx.canvas.toDataURL(), '_blank');
+	// If the browser prevented opening the image, add it in HTML.
+	canvasWindow.document.write('<img src="' + ctx.canvas.toDataURL() + '" />');
 }
