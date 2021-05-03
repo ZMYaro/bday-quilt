@@ -42,6 +42,7 @@ function addBday() {
 	newListItem.appendChild(newDatePicker);
 	
 	newDeleteBtn.innerHTML = '&times';
+	newDeleteBtn.setAttribute('aria-label', 'Remove this date.');
 	newDeleteBtn.onclick = deleteBday;
 	newListItem.appendChild(newDeleteBtn);
 	
